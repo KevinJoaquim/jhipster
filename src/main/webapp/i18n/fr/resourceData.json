@@ -1,0 +1,27 @@
+{
+  "myappApp": {
+    "resourceData": {
+      "home": {
+        "title": "ResourceData",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Resource Data",
+        "createOrEditLabel": "Créer ou éditer un Resource Data",
+        "notFound": "Aucun Resource Data trouvé"
+      },
+      "created": "Un nouveau Resource Data a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Resource Data avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Resource Data avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Resource Data {{ id }} ?"
+      },
+      "detail": {
+        "title": "Resource Data"
+      },
+      "id": "ID",
+      "gold": "Gold",
+      "wood": "Wood",
+      "fer": "Fer",
+      "registerUser": "Register User"
+    }
+  }
+}

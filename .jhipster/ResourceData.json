@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20230223132458",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "resource_data",
+  "fields": [
+    {
+      "fieldName": "gold",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "wood",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "fer",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ResourceData",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "registerUser",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

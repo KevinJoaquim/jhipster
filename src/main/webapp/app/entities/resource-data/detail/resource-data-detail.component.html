@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="resourceData">
+      <h2 data-cy="resourceDataDetailsHeading"><span jhiTranslate="myappApp.resourceData.detail.title">Resource Data</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ resourceData.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceData.gold">Gold</span></dt>
+        <dd>
+          <span>{{ resourceData.gold }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceData.wood">Wood</span></dt>
+        <dd>
+          <span>{{ resourceData.wood }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceData.fer">Fer</span></dt>
+        <dd>
+          <span>{{ resourceData.fer }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceData.registerUser">Register User</span></dt>
+        <dd>
+          <span>{{ resourceData.registerUser?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/resource-data', resourceData.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

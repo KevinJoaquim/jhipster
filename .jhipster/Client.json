@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230223132459",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "client",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Client",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "resourceData",
+      "ownerSide": true,
+      "relationshipName": "company",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

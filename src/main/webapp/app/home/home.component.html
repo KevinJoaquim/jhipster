@@ -6,13 +6,9 @@
   <div class="col-md-9">
     <h1 class="display-4"><span jhiTranslate="home.title">Bienvenue, Java Hipster !</span> (Myapp)</h1>
 
-    <p class="lead" jhiTranslate="home.subtitle">Ceci est votre page d'accueil</p>
-
     <div [ngSwitch]="account !== null">
-      <div class="alert alert-success" *ngSwitchCase="true">
-        <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
-          >Vous êtes connecté en tant que "{{ account.login }}".</span
-        >
+      <div *ngSwitchCase="true">
+        <span id="home-logged-message" *ngIf="account"> Chef {{ account.login }}, commencez par construire ton village ! </span>
       </div>
 
       <div class="alert alert-warning" *ngSwitchCase="false">
@@ -68,12 +64,5 @@
         >
       </li>
     </ul>
-
-    <p>
-      <span jhiTranslate="home.like">Si vous aimez JHipster, donnez nous une étoile sur</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github"
-        >GitHub </a
-      >!
-    </p>
   </div>
 </div>

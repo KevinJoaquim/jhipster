@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="resourceGot">
+      <h2 data-cy="resourceGotDetailsHeading"><span jhiTranslate="myappApp.resourceGot.detail.title">Resource Got</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ resourceGot.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceGot.gold">Gold</span></dt>
+        <dd>
+          <span>{{ resourceGot.gold }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceGot.wood">Wood</span></dt>
+        <dd>
+          <span>{{ resourceGot.wood }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceGot.fer">Fer</span></dt>
+        <dd>
+          <span>{{ resourceGot.fer }}</span>
+        </dd>
+        <dt><span jhiTranslate="myappApp.resourceGot.registerUser">Register User</span></dt>
+        <dd>
+          <span>{{ resourceGot.registerUser?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/resource-got', resourceGot.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

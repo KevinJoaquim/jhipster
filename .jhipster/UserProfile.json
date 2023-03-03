@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230223140325",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_profile",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserProfile",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "resourceData",
+      "ownerSide": true,
+      "relationshipName": "resource",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

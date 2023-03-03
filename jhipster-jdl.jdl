@@ -1,0 +1,9 @@
+entity ResourceGot {
+    gold Float,
+    wood Float,
+    fer Float
+}
+
+relationship OneToOne {
+    ResourceGot{registerUser} to User
+}

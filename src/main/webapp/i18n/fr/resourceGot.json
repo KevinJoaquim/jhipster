@@ -1,0 +1,27 @@
+{
+  "myappApp": {
+    "resourceGot": {
+      "home": {
+        "title": "ResourceGots",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Resource Got",
+        "createOrEditLabel": "Créer ou éditer un Resource Got",
+        "notFound": "Aucun Resource Got trouvé"
+      },
+      "created": "Un nouveau Resource Got a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Resource Got avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Resource Got avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Resource Got {{ id }} ?"
+      },
+      "detail": {
+        "title": "Resource Got"
+      },
+      "id": "ID",
+      "gold": "Gold",
+      "wood": "Wood",
+      "fer": "Fer",
+      "registerUser": "Register User"
+    }
+  }
+}

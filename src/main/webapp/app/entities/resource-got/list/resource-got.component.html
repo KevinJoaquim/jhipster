@@ -1,0 +1,111 @@
+<div>
+  <h2 id="page-heading" data-cy="ResourceGotHeading">
+    <span jhiTranslate="myappApp.resourceGot.home.title">ResourceGots</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="myappApp.resourceGot.home.refreshListLabel">Actualiser la liste</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-resource-got"
+        [routerLink]="['/resource-got/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="myappApp.resourceGot.home.createLabel"> Créer un nouveau Resource Got </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="resourceGots?.length === 0">
+    <span jhiTranslate="myappApp.resourceGot.home.notFound">Aucun Resource Got trouvé</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="resourceGots && resourceGots.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="gold">
+            <div class="d-flex">
+              <span jhiTranslate="myappApp.resourceGot.gold">Gold</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="wood">
+            <div class="d-flex">
+              <span jhiTranslate="myappApp.resourceGot.wood">Wood</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fer">
+            <div class="d-flex">
+              <span jhiTranslate="myappApp.resourceGot.fer">Fer</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="registerUser.id">
+            <div class="d-flex">
+              <span jhiTranslate="myappApp.resourceGot.registerUser">Register User</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resourceGot of resourceGots; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/resource-got', resourceGot.id, 'view']">{{ resourceGot.id }}</a>
+          </td>
+          <td>{{ resourceGot.gold }}</td>
+          <td>{{ resourceGot.wood }}</td>
+          <td>{{ resourceGot.fer }}</td>
+          <td>
+            {{ resourceGot.registerUser?.id }}
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/resource-got', resourceGot.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Voir</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/resource-got', resourceGot.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editer</span>
+              </button>
+
+              <button type="submit" (click)="delete(resourceGot)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Supprimer</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
