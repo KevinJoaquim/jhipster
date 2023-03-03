@@ -1,15 +1,18 @@
-node {
+node{
+  def app
+
     stage('Clone') {
-        git branch: 'main', url: 'https://github.com/KevinJoaquim/jhipster.git'
+        checkout scm
     }
-    stage('Build') {
-        sh '''
-              echo "ok1"
-        '''
+
+    stage('Build image') {
+        app = docker.build("kev/nginx")
     }
-    stage('Run') {
-        sh '''
-              echo "ok"
-        '''
+
+    stage('Test image') {
+        docker.image('kev/nginx').withRun('-p 90:80') { c ->
+        sh 'docker ps'
+        sh 'curl localhost'
+	     }
     }
 }
