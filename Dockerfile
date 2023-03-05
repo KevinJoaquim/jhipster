@@ -12,8 +12,8 @@ RUN mkdir -p /home/jhipster/app
 COPY target/myapp-0.0.1-SNAPSHOT.jar /home/jhipster/app/target/myapp-0.0.1-SNAPSHOT.jar
 #COPY --from=build /home/app/target/demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
 EXPOSE 8080 9000 3001
-ENTRYPOINT ["java","-jar","/home/jhipster/app/target/myapp-0.0.1-SNAPSHOT.jar"]
-
+#ENTRYPOINT ["java","-jar","/home/jhipster/app/target/myapp-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","/home/jhipster/app/target/myapp-0.0.1-SNAPSHOT.jar"]
 
 # configure the "jhipster" user
 #RUN groupadd jhipster && useradd jhipster -s /bin/bash -m -g jhipster -G jhipster && adduser jhipster sudo
