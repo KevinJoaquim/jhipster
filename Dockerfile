@@ -3,7 +3,6 @@
 FROM maven:3.6.0-jdk-11-slim AS build
 RUN mkdir -p /home/jhipster/app
 COPY . /home/jhipster/app
-RUN mvn -f /home/app/pom.xml clean package
 
 #
 # Package stage
