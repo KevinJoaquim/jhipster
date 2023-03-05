@@ -30,7 +30,7 @@ RUN \
         fontconfig \
         libpng-dev \
         sudo \
-        openjdk-11-jdk && \
+        openjdk-11* && \
       update-java-alternatives -s java-1.11.0-openjdk-amd64 && \
       # install node.js
       wget https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.gz -O /tmp/node.tar.gz && \
