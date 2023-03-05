@@ -12,7 +12,7 @@ ENV PATH "$PATH:$MAVEN_HOME/bin"
 RUN apt-get update \
     && apt-get upgrade
 
-RUN apt-get -y install vim git sudo zip bzip2 fontconfig curl nodejs npm
+RUN apt-get -y install vim git sudo zip bzip2 fontconfig curl
 
 # install maven
 RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
@@ -23,17 +23,18 @@ RUN \
       apt-get --no-install-recommends install -y \
         wget \
         curl \
-        #vim \
+        vim \
         git \
-        #zip \
+        zip \
         bzip2 \
         fontconfig \
         libpng-dev \
         sudo \
         openjdk-11-jdk && \
-      #update-java-alternatives -s java-1.11.0-openjdk-amd64 && \
+      update-java-alternatives -s java-1.11.0-openjdk-amd64 && \
       # install node.js
-#RUN   apt-get install -y nodejs npm && \
+      wget https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.gz -O /tmp/node.tar.gz && \
+      tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz && \
       # upgrade npm
       npm install -g npm && \
       # install yeoman
