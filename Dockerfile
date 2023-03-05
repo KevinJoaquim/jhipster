@@ -33,7 +33,7 @@ RUN \
         openjdk-11-jdk
       #update-java-alternatives -s java-1.11.0-openjdk-amd64 && \
       # install node.js
-RUN   apt-get install nodejs npm && \
+RUN   apt-get install -y nodejs npm && \
       # upgrade npm
       npm install -g npm && \
       # install yeoman
