@@ -9,8 +9,8 @@ ENV MAVEN_HOME /usr/share/maven
 ENV PATH "$PATH:$MAVEN_HOME/bin"
 
 # install utilities
-RUN apt-get update \
-    && apt-get upgrade
+#RUN apt-get update \
+#    && apt-get upgrade
 
 RUN apt-get -y install vim git sudo zip bzip2 fontconfig curl nodejs npm
 
